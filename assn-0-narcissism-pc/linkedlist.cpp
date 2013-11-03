@@ -8,15 +8,12 @@
 #include "genlib.h"
 #include "strutils.h"
 
-
 struct node
 {
 	int data;
 	struct node* next;
 };
 
-//node* CreateNode(int value);
-//public node* CreateNode(int value);
 struct node* CreateNode(int value);
 
 int main()
@@ -32,4 +29,15 @@ struct node* CreateNode(int value)
 	newNode->data = value;
 	newNode->next = NULL;
 	return newNode;
+}
+
+node* AddNode(node* currentNode, int value)
+{
+	if(currentNode == NULL)
+		return CreateNode(value);
+	node* newNode = CreateNode(value);
+	newNode->next = currentNode->next;
+	currentNode = newNode;
+
+	return currentNode;
 }
