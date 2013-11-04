@@ -40,6 +40,10 @@ node* AddNode(node* currentNode, int value)
 	node* newNode = CreateNode(value);
 	newNode->next = currentNode;
 	currentNode = newNode;
-
 	return currentNode;
+}
+
+static int SumTwoLists(node* firstList, node* secondList)
+{
+	
 }
